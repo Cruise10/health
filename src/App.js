@@ -1,21 +1,22 @@
 import React from "react";
-import "./App.css";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Legal from "./Pages/Legal";
+import About from "./Pages/About";
+import Services from "./Pages/Services";
 import NotFound from "./Pages/NotFound";
 import Appointment from "./Pages/Appointment";
-import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/legal" element={<Legal />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </div>
+    </Router>
   );
 }
 
